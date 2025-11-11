@@ -1,0 +1,263 @@
+{
+  "vendors": [
+    {
+      "name": "AMD",
+      "website": "https://www.amd.com/en/support",
+      "patterns": {
+        "graphics": {
+          "search_page": "https://www.amd.com/en/support/download/drivers.html",
+          "direct_download_pattern": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-{version}-win10-win11-{month}-rdna.exe",
+          "example": "https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-25.10.2-win10-win11-oct-rdna.exe",
+          "notes": "AMD usa versão e mês no nome do arquivo. RDNA para GPUs modernas (RX 6000/7000)"
+        },
+        "chipset": {
+          "search_page": "https://www.amd.com/en/support/chipsets",
+          "direct_download_pattern": "https://drivers.amd.com/drivers/amd_chipset_software_{version}.exe",
+          "example": "https://drivers.amd.com/drivers/amd_chipset_software_5.10.29.231.exe",
+          "notes": "Chipset drivers para placas-mãe AMD"
+        }
+      }
+    },
+    {
+      "name": "Intel",
+      "website": "https://www.intel.com/content/www/us/en/download-center/home.html",
+      "patterns": {
+        "graphics": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/graphics-windows-{version}.exe",
+          "example": "https://downloadmirror.intel.com/785597/graphics-windows-101.5593.exe",
+          "notes": "Intel Graphics drivers. Precisa do ID do download e versão"
+        },
+        "network": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/PROWinx64.exe",
+          "example": "https://downloadmirror.intel.com/18293/PROWinx64.exe",
+          "notes": "Intel LAN/Ethernet drivers"
+        },
+        "chipset": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/19347/chipset-inf-utility.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/SetupChipset.exe",
+          "example": "https://downloadmirror.intel.com/19347/SetupChipset.exe",
+          "notes": "Intel Chipset INF Utility"
+        },
+        "management_engine": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/19131/intel-management-engine-driver-for-windows-10.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/MEI-Only_Installer.exe",
+          "example": "https://downloadmirror.intel.com/19131/MEI-Only_Installer.exe",
+          "notes": "Intel Management Engine Interface (MEI)"
+        },
+        "wireless": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/19351/windows-10-and-windows-11-wi-fi-drivers-for-intel-wireless-adapters.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/WiFi-{version}-Driver64-Win10-Win11.exe",
+          "example": "https://downloadmirror.intel.com/19351/WiFi-22.240.0-Driver64-Win10-Win11.exe",
+          "notes": "Intel Wi-Fi drivers"
+        },
+        "bluetooth": {
+          "search_page": "https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-for-windows-10-and-windows-11.html",
+          "direct_download_pattern": "https://downloadmirror.intel.com/{id}/BT-{version}-Driver64-Win10-Win11.exe",
+          "example": "https://downloadmirror.intel.com/18649/BT-22.240.0-Driver64-Win10-Win11.exe",
+          "notes": "Intel Bluetooth drivers"
+        }
+      }
+    },
+    {
+      "name": "NVIDIA",
+      "website": "https://www.nvidia.com/Download/index.aspx",
+      "patterns": {
+        "graphics": {
+          "search_page": "https://www.nvidia.com/Download/Find.aspx",
+          "direct_download_pattern": "https://us.download.nvidia.com/Windows/{version}/{version}-desktop-win10-win11-64bit-international-dch-whql.exe",
+          "example": "https://us.download.nvidia.com/Windows/566.03/566.03-desktop-win10-win11-64bit-international-dch-whql.exe",
+          "notes": "NVIDIA GeForce drivers. Versão aparece duas vezes na URL. DCH para Windows 10/11 moderno"
+        },
+        "studio": {
+          "search_page": "https://www.nvidia.com/Download/Find.aspx?lang=en-us",
+          "direct_download_pattern": "https://us.download.nvidia.com/Windows/{version}/{version}-desktop-win10-win11-64bit-international-nsd-dch-whql.exe",
+          "example": "https://us.download.nvidia.com/Windows/566.03/566.03-desktop-win10-win11-64bit-international-nsd-dch-whql.exe",
+          "notes": "NVIDIA Studio Drivers para criadores de conteúdo"
+        }
+      }
+    },
+    {
+      "name": "Realtek",
+      "website": "https://www.realtek.com/en/downloads",
+      "patterns": {
+        "audio": {
+          "search_page": "https://www.realtek.com/en/component/zoo/category/pc-audio-codecs-high-definition-audio-codecs-software",
+          "direct_download_pattern": "https://www.realtek.com/Download/File?FileId={id}",
+          "example": "https://www.realtek.com/Download/File?FileId=1234",
+          "notes": "Realtek HD Audio. Precisa do FileId específico. Geralmente vem em ZIP"
+        },
+        "network": {
+          "search_page": "https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software",
+          "direct_download_pattern": "https://www.realtek.com/Download/File?FileId={id}",
+          "example": "https://www.realtek.com/Download/File?FileId=5678",
+          "notes": "Realtek Ethernet. Precisa do FileId específico"
+        },
+        "card_reader": {
+          "search_page": "https://www.realtek.com/en/component/zoo/category/card-reader-solutions-card-reader-controllers-software",
+          "direct_download_pattern": "https://www.realtek.com/Download/File?FileId={id}",
+          "example": "https://www.realtek.com/Download/File?FileId=9012",
+          "notes": "Realtek Card Reader drivers"
+        }
+      }
+    },
+    {
+      "name": "Broadcom",
+      "website": "https://www.broadcom.com/support/download-search",
+      "patterns": {
+        "wireless": {
+          "search_page": "https://www.broadcom.com/support/download-search?pg=&pf=Wireless+LAN+Infrastructure",
+          "direct_download_pattern": "https://docs.broadcom.com/docs/{filename}",
+          "example": "https://docs.broadcom.com/docs/BCM943602CS_Win10_64bit_v7.35.333.0.zip",
+          "notes": "Broadcom Wi-Fi. Estrutura varia muito, geralmente precisa buscar manualmente"
+        },
+        "bluetooth": {
+          "search_page": "https://www.broadcom.com/support/download-search?pg=&pf=Bluetooth",
+          "direct_download_pattern": "https://docs.broadcom.com/docs/{filename}",
+          "example": "https://docs.broadcom.com/docs/BCM20702_Bluetooth_Win10_v12.0.1.zip",
+          "notes": "Broadcom Bluetooth drivers"
+        }
+      }
+    },
+    {
+      "name": "ASUS",
+      "website": "https://www.asus.com/support/download-center/",
+      "patterns": {
+        "motherboard": {
+          "search_page": "https://www.asus.com/support/download-center/",
+          "direct_download_pattern": "https://dlcdnets.asus.com/pub/ASUS/mb/{model}/{category}/{filename}",
+          "example": "https://dlcdnets.asus.com/pub/ASUS/mb/LGA1200/PRIME_Z590M-PLUS/Chipset/Chipset_Intel_Z590_V10.1.18838.8283_20210514.zip",
+          "notes": "ASUS motherboard drivers. Precisa do modelo exato da placa-mãe"
+        },
+        "utilities": {
+          "search_page": "https://www.asus.com/support/download-center/",
+          "direct_download_pattern": "https://dlcdnets.asus.com/pub/ASUS/mb/{model}/Utilities/{filename}",
+          "example": "https://dlcdnets.asus.com/pub/ASUS/mb/LGA1200/PRIME_Z590M-PLUS/Utilities/AI_Suite_3_V3.00.30.zip",
+          "notes": "ASUS utilities como AI Suite, Armoury Crate, etc."
+        }
+      }
+    },
+    {
+      "name": "MSI",
+      "website": "https://www.msi.com/support/download",
+      "patterns": {
+        "motherboard": {
+          "search_page": "https://www.msi.com/Motherboard/support/{model}",
+          "direct_download_pattern": "https://download.msi.com/dvr_exe/{filename}",
+          "example": "https://download.msi.com/dvr_exe/mb/Intel_LAN_Win10_64_V12.18.9.7.zip",
+          "notes": "MSI motherboard drivers"
+        },
+        "graphics": {
+          "search_page": "https://www.msi.com/Graphics-Card/support/{model}",
+          "direct_download_pattern": "https://download.msi.com/dvr_exe/{filename}",
+          "example": "https://download.msi.com/dvr_exe/vga/AMD_Radeon_Software_Adrenalin_24.10.1.exe",
+          "notes": "MSI graphics card utilities e drivers"
+        }
+      }
+    },
+    {
+      "name": "Gigabyte",
+      "website": "https://www.gigabyte.com/Support",
+      "patterns": {
+        "motherboard": {
+          "search_page": "https://www.gigabyte.com/Motherboard/{model}/support#support-dl-driver",
+          "direct_download_pattern": "https://download.gigabyte.com/FileList/Driver/{filename}",
+          "example": "https://download.gigabyte.com/FileList/Driver/mb_driver_lan_intel_b660.zip",
+          "notes": "Gigabyte motherboard drivers"
+        }
+      }
+    },
+    {
+      "name": "ASRock",
+      "website": "https://www.asrock.com/support/download.asp",
+      "patterns": {
+        "motherboard": {
+          "search_page": "https://www.asrock.com/mb/{model}/index.asp#Download",
+          "direct_download_pattern": "https://download.asrock.com/Drivers/{category}/{model}/{filename}",
+          "example": "https://download.asrock.com/Drivers/Intel/LAN/Intel_LAN(v1.0.2.4).zip",
+          "notes": "ASRock motherboard drivers"
+        }
+      }
+    },
+    {
+      "name": "Samsung",
+      "website": "https://www.samsung.com/semiconductor/minisite/ssd/download/tools/",
+      "patterns": {
+        "ssd": {
+          "search_page": "https://www.samsung.com/semiconductor/minisite/ssd/download/tools/",
+          "direct_download_pattern": "https://download.semiconductor.samsung.com/resources/software-resources/{filename}",
+          "example": "https://download.semiconductor.samsung.com/resources/software-resources/Samsung_NVM_Express_Driver_3.3.exe",
+          "notes": "Samsung NVMe drivers para SSDs"
+        }
+      }
+    },
+    {
+      "name": "Western Digital",
+      "website": "https://support.wdc.com/downloads.aspx",
+      "patterns": {
+        "storage": {
+          "search_page": "https://support.wdc.com/downloads.aspx?lang=en",
+          "direct_download_pattern": "https://downloads.wdc.com/wdapp/{filename}",
+          "example": "https://downloads.wdc.com/wdapp/WD_Black_AN1500_NVMe_SSD_Driver_v3.2.zip",
+          "notes": "Western Digital NVMe e storage drivers"
+        }
+      }
+    },
+    {
+      "name": "ADATA",
+      "website": "https://www.adata.com/en/support/downloads",
+      "patterns": {
+        "storage": {
+          "search_page": "https://www.adata.com/en/support/downloads",
+          "direct_download_pattern": "https://www.adata.com/upload/downloadfile/{filename}",
+          "example": "https://www.adata.com/upload/downloadfile/ADATA_NVMe_Driver_v1.3.zip",
+          "notes": "ADATA SSD/NVMe drivers"
+        }
+      }
+    },
+    {
+      "name": "Corsair",
+      "website": "https://www.corsair.com/us/en/downloads",
+      "patterns": {
+        "storage": {
+          "search_page": "https://www.corsair.com/us/en/downloads",
+          "direct_download_pattern": "https://downloads.corsair.com/Files/CUE/{filename}",
+          "example": "https://downloads.corsair.com/Files/CUE/iCUE-Setup-4.33.138.msi",
+          "notes": "Corsair iCUE para periféricos e storage"
+        }
+      }
+    },
+    {
+      "name": "Logitech",
+      "website": "https://support.logi.com/hc/en-us/articles/360025298053",
+      "patterns": {
+        "peripherals": {
+          "search_page": "https://support.logi.com/hc/en-us/articles/360025298053",
+          "direct_download_pattern": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/{filename}",
+          "example": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe",
+          "notes": "Logitech G HUB para periféricos gaming"
+        }
+      }
+    },
+    {
+      "name": "Razer",
+      "website": "https://www.razer.com/synapse-3",
+      "patterns": {
+        "peripherals": {
+          "search_page": "https://www.razer.com/synapse-3",
+          "direct_download_pattern": "https://dl.razerzone.com/drivers/{filename}",
+          "example": "https://dl.razerzone.com/drivers/Razer_Synapse_3_Installer.exe",
+          "notes": "Razer Synapse para periféricos"
+        }
+      }
+    }
+  ],
+  "notes": {
+    "general": "Este arquivo contém padrões de URLs de download dos principais fabricantes de hardware",
+    "usage": "Use {version}, {id}, {model}, {filename} como placeholders para substituição",
+    "recommendation": "Sempre verifique o site oficial do fabricante para obter a versão mais recente",
+    "direct_links": "Links diretos podem mudar. Use as páginas de busca como fallback",
+    "file_types": "Drivers podem vir em .exe, .msi, .zip, ou outros formatos dependendo do fabricante"
+  }
+}
