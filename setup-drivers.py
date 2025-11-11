@@ -21,7 +21,7 @@ def main():
     args = parser.parse_args()
     
     # Setup logging with verbosity from arguments
-    setup_logging(log_file='setup-drivers.log', verbose=args.verbose)
+    setup_logging(log_file='logs/setup-drivers.log', verbose=args.verbose)
     
     logger.info("=" * 60)
     logger.info("Silent Driver Installer - Starting")

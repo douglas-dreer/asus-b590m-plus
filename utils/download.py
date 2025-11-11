@@ -11,19 +11,30 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 
-def download_file(url: str, output_path: str, max_retries: int = 3, timeout: int = 600) -> bool:
+def download_file(url: str, output_path: str, max_retries: int = 3, timeout: int = 600, force: bool = False) -> bool:
     """
-    Download file from URL with retry logic
+    Download file from URL with retry logic and cache support
     
     Args:
         url: URL to download from
         output_path: Local path to save file
         max_retries: Maximum number of retry attempts
         timeout: Timeout in seconds for each attempt
+        force: If True, re-download even if file exists (default: False)
         
     Returns:
         True if download successful, False otherwise
     """
+    # Check if file already exists (cache support)
+    output_file = Path(output_path)
+    if output_file.exists() and not force:
+        logger.info(f"File already exists, using cached version: {output_path}")
+        logger.info(f"Use force=True to re-download")
+        return True
+    
+    if output_file.exists() and force:
+        logger.info(f"Force flag enabled, re-downloading: {output_path}")
+    
     for attempt in range(1, max_retries + 1):
         try:
             logger.info(f"Downloading from {url} (attempt {attempt}/{max_retries})")
@@ -35,8 +46,7 @@ def download_file(url: str, output_path: str, max_retries: int = 3, timeout: int
             # Get file size if available
             total_size = int(response.headers.get('content-length', 0))
             
-            # Download with progress tracking
-            output_file = Path(output_path)
+            # Ensure output directory exists
             output_file.parent.mkdir(parents=True, exist_ok=True)
             
             with open(output_path, 'wb') as f:
@@ -78,7 +88,7 @@ def download_file(url: str, output_path: str, max_retries: int = 3, timeout: int
     return False
 
 
-def download_with_progress_bar(url: str, output_path: str, max_retries: int = 3, timeout: int = 600) -> bool:
+def download_with_progress_bar(url: str, output_path: str, max_retries: int = 3, timeout: int = 600, force: bool = False) -> bool:
     """
     Download file with tqdm progress bar (optional enhancement)
     
@@ -87,12 +97,23 @@ def download_with_progress_bar(url: str, output_path: str, max_retries: int = 3,
         output_path: Local path to save file
         max_retries: Maximum number of retry attempts
         timeout: Timeout in seconds
+        force: If True, re-download even if file exists (default: False)
         
     Returns:
         True if download successful, False otherwise
     """
     try:
         from tqdm import tqdm
+        
+        # Check if file already exists (cache support)
+        output_file = Path(output_path)
+        if output_file.exists() and not force:
+            logger.info(f"File already exists, using cached version: {output_path}")
+            logger.info(f"Use force=True to re-download")
+            return True
+        
+        if output_file.exists() and force:
+            logger.info(f"Force flag enabled, re-downloading: {output_path}")
         
         for attempt in range(1, max_retries + 1):
             try:
@@ -103,7 +124,7 @@ def download_with_progress_bar(url: str, output_path: str, max_retries: int = 3,
                 
                 total_size = int(response.headers.get('content-length', 0))
                 
-                output_file = Path(output_path)
+                # Ensure output directory exists
                 output_file.parent.mkdir(parents=True, exist_ok=True)
                 
                 with open(output_path, 'wb') as f, tqdm(
@@ -140,4 +161,4 @@ def download_with_progress_bar(url: str, output_path: str, max_retries: int = 3,
     except ImportError:
         # tqdm not available, fall back to basic download
         logger.info("tqdm not available, using basic download")
-        return download_file(url, output_path, max_retries, timeout)
+        return download_file(url, output_path, max_retries, timeout, force)
