@@ -61,3 +61,5 @@ htmlcov/
 *.temp
 *.bak
 *.manual.txt
+
+.kiro/
