@@ -33,6 +33,35 @@ This tool automates the process of downloading, validating, and installing devic
 
 ## Usage
 
+### Creating a Driver Manifest from System Scan
+
+You can automatically create a `drivers.json` manifest by scanning your system:
+
+```bash
+# Scan system and create drivers.json
+python detect-drivers.py --action scan
+
+# Scan and save to custom location
+python detect-drivers.py --action scan --export my-drivers.json
+
+# Scan with verbose logging
+python detect-drivers.py --action scan --verbose
+```
+
+This will:
+1. Detect all installed drivers on your system
+2. Create a `drivers.json` file with driver information
+3. Generate a template that needs manual completion (URLs, SHA256 hashes, etc.)
+
+**Note**: The generated manifest requires manual editing to add:
+- Download URLs from manufacturer websites
+- File names
+- SHA256 hashes for validation
+- Installation types (exe, msi, zip, etc.)
+- Silent installation arguments
+
+See [DETECT-DRIVERS-USAGE.md](DETECT-DRIVERS-USAGE.md) for detailed instructions.
+
 ### Driver Detection
 
 Before installing drivers, you can detect which drivers are installed and which need updates:

@@ -40,7 +40,7 @@ venv.bak/
 
 # Logs
 *.log
-setup-drivers.log
+logs/
 
 # Working directories
 downloads_work/
@@ -63,4 +63,3 @@ htmlcov/
 *.manual.txt
 
 .kiro/
-./*.log

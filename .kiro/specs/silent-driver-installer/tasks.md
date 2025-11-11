@@ -70,30 +70,46 @@
   - [x] 3.6 - Criar função para exportar essa lista de drivers para um arquivo json na raiz do projeto
 
   
-- [-] 4. Implementar módulo de download com retry
-  - [-] 4.1 - Criar função de download usando biblioteca requests
-  - [-] 4.2 - Implementar retry com backoff exponencial (1s, 2s, 4s)
-  - [-] 4.3 - Adicionar barra de progresso com tqdm (opcional)
-  -[-] 4.4 - Implementar timeout de 600 segundos
-  - [-] 4.5 - Adicionar suporte a cache de arquivos já baixados
+- [x] 4. Implementar módulo de download com retry
+
+
+
+  - [x] 4.1 - Criar função de download usando biblioteca requests
+
+
+
+  - [x] 4.2 - Implementar retry com backoff exponencial (1s, 2s, 4s)
+
+  - [x] 4.3 - Adicionar barra de progresso com tqdm (opcional)
+  - [x] 4.4 - Implementar timeout de 600 segundos
+  - [x] 4.5 - Adicionar suporte a cache de arquivos já baixados
+
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [-] 5. Implementar módulo de validação SHA256 
-  - [-] 5.2 - Criar função para calcular hash SHA256 usando hashlib
-  - [-] 5.3 - Implementar leitura de arquivo em chunks para eficiência
-  - [-] 5.4 - Adicionar comparação case-insensitive de hashes
-  - [-] 5.5 - Implementar logging de validação (sucesso/falha)
+
+- [x] 5. Implementar módulo de validação SHA256 
+
+
+
+  - [x] 5.2 - Criar função para calcular hash SHA256 usando hashlib
+
+  - [x] 5.3 - Implementar leitura de arquivo em chunks para eficiência
+
+  - [x] 5.4 - Adicionar comparação case-insensitive de hashes
+
+  - [x] 5.5 - Implementar logging de validação (sucesso/falha)
+
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
 - [-] 6. Implementar módulo de instalação para Windows
-  - [-] 6.x - Criar função para instalar executáveis (.exe) com argumentos silenciosos
-  - [-] 6.x - Implementar tentativas múltiplas de argumentos (/S, /silent, /quiet, etc)
-  - [-] 6.x - Criar função para instalar MSI usando msiexec
-  - [-] 6.x - Adicionar detecção de códigos de saída (0, 3010, 16[-] 6.x - 41)
-  - [-] 6.x - Implementar extração e instalação de arquivos ZIP
+  - [-] 6.1 - Criar função para instalar executáveis (.exe) com argumentos silenciosos
+  - [-] 6.2 - Implementar tentativas múltiplas de argumentos (/S, /silent, /quiet, etc)
+  - [-] 6.3 - Criar função para instalar MSI usando msiexec
+  - [-] 6.4 - Adicionar detecção de códigos de saída (0, 3010, 1641)
+  - [-] 6.5 - Implementar extração e instalação de arquivos ZIP
   - _Requirements: 3.1, 3.2, 3.5_
 
-- [ ] 6. Implementar módulo de instalação para Linux
+- [ ] 7. Implementar módulo de instalação para Linux
   - Criar função para instalar pacotes DEB (dpkg/apt)
   - Criar função para instalar pacotes RPM (rpm/dnf/yum)
   - Adicionar suporte a instalação de drivers via modprobe
