@@ -9,6 +9,7 @@ This tool automates the process of downloading, validating, and installing devic
 ## Features
 
 - **Cross-platform**: Works on Windows and Linux
+- **Driver detection**: Automatically detect installed drivers and compare with manifest
 - **Automated downloads**: Downloads drivers from URLs specified in manifest
 - **SHA256 validation**: Verifies file integrity before installation
 - **Silent installation**: Installs drivers without user interaction
@@ -32,7 +33,34 @@ This tool automates the process of downloading, validating, and installing devic
 
 ## Usage
 
-### Basic Usage
+### Driver Detection
+
+Before installing drivers, you can detect which drivers are installed and which need updates:
+
+```bash
+# Detect drivers needing installation or update
+python detect-drivers.py --manifest drivers-example.json
+
+# List all available drivers in manifest
+python detect-drivers.py --action available --manifest drivers-example.json
+
+# List currently installed drivers
+python detect-drivers.py --action installed
+
+# List drivers not installed
+python detect-drivers.py --action not-installed --manifest drivers-example.json
+
+# List drivers with different versions
+python detect-drivers.py --action different-versions --manifest drivers-example.json
+
+# Filter by operating system
+python detect-drivers.py --action available --os-filter windows
+
+# Export results to JSON
+python detect-drivers.py --action needing-update --export drivers-to-install.json
+```
+
+### Driver Installation
 
 ```bash
 # Run with default settings
@@ -102,10 +130,17 @@ The `drivers.json` manifest file defines which drivers to install:
 ```
 .
 ├── setup-drivers.py          # Main entry point
+├── detect-drivers.py         # Driver detection tool
 ├── __main__.py               # Module entry point
 ├── requirements.txt          # Python dependencies
+├── drivers-example.json      # Example driver manifest
 ├── installer/                # Installation modules
 ├── utils/                    # Utility functions
+│   ├── driver_detector.py    # Driver detection module
+│   ├── download.py           # Download utilities
+│   ├── file_utils.py         # File operations
+│   ├── init_validator.py     # Environment validation
+│   └── logging_config.py     # Logging configuration
 ├── validators/               # Validation modules
 ├── downloads/                # Manifest files
 │   └── drivers.json

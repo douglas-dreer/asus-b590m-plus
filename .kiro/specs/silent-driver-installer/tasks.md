@@ -29,49 +29,68 @@
 
    - _Requirements: 11.1, 11.2, 11.3_
 
-- [-] 2. Implementar módulo de inicialização e validação
-  - [-] 2.1 - Criar função para verificar versão do Python (3.7+)
-  - [-] 2.2 - Implementar verificação de dependências do requirements.txt
-  - [-] 2.3 - Adicionar detecção automática de sistema operacional (Windows/Linux)
-  - [-] 2.4 Implementar verificação de privilégios elevados (admin/root/sudo)
-  - [-] 2.5 - Criar parser de argumentos de linha de comando (argparse)
+- [x] 2. Implementar módulo de inicialização e validação
+
+
+
+
+
+  - [x] 2.1 - Criar função para verificar versão do Python (3.7+)
+
+
+  - [x] 2.2 - Implementar verificação de dependências do requirements.txt
+
+  - [x] 2.3 - Adicionar detecção automática de sistema operacional (Windows/Linux)
+
+  - [x] 2.4 Implementar verificação de privilégios elevados (admin/root/sudo)
+
+  - [x] 2.5 - Criar parser de argumentos de linha de comando (argparse)
+
   - _Requirements: 11.1, 11.2, 11.4, 11.5, 11.6, 11.7, 6.1, 6.2, 6.3, 6.4, 6.5_
 
 
-- [] 3. Auto detecção de drivers para instalação
-  - [] 3.1 - Criar função para listar drivers disponíveis
-  - [] 3.2 - Criar função para listar drivers instalados
-  - [] 3.3 - Criar função para listar drivers não instalados
-  - [] 3.4 - Criar função para listar drivers instalados com versões diferentes
-  - [] 3.5 - Criar função para listar drivers instalados com versões diferentes e não instalados
-  - [] 3.6 - Criar função para exportar essa lista de drivers para um arquivo json na
-- [] 3. Implementar módulo de download com retry
+- [x] 3. Auto detecção de drivers para instalação
 
 
 
 
 
+  - [x] 3.0 - Criar um arquivo drivers-exemple.json com lista de drivers de exemplo
 
-  - Criar função de download usando biblioteca requests
-  - Implementar retry com backoff exponencial (1s, 2s, 4s)
-  - Adicionar barra de progresso com tqdm (opcional)
-  - Implementar timeout de 600 segundos
-  - Adicionar suporte a cache de arquivos já baixados
+  - [x] 3.1 - Criar função para listar drivers disponíveis
+
+  - [x] 3.2 - Criar função para listar drivers instalados
+
+  - [x] 3.3 - Criar função para listar drivers não instalados
+
+  - [x] 3.4 - Criar função para listar drivers instalados com versões diferentes
+
+  - [x] 3.5 - Criar função para listar drivers instalados com versões diferentes e não instalados
+
+  - [x] 3.6 - Criar função para exportar essa lista de drivers para um arquivo json na raiz do projeto
+
+  
+- [-] 4. Implementar módulo de download com retry
+  - [-] 4.1 - Criar função de download usando biblioteca requests
+  - [-] 4.2 - Implementar retry com backoff exponencial (1s, 2s, 4s)
+  - [-] 4.3 - Adicionar barra de progresso com tqdm (opcional)
+  -[-] 4.4 - Implementar timeout de 600 segundos
+  - [-] 4.5 - Adicionar suporte a cache de arquivos já baixados
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 4. Implementar módulo de validação SHA256
-  - Criar função para calcular hash SHA256 usando hashlib
-  - Implementar leitura de arquivo em chunks para eficiência
-  - Adicionar comparação case-insensitive de hashes
-  - Implementar logging de validação (sucesso/falha)
+- [-] 5. Implementar módulo de validação SHA256 
+  - [-] 5.2 - Criar função para calcular hash SHA256 usando hashlib
+  - [-] 5.3 - Implementar leitura de arquivo em chunks para eficiência
+  - [-] 5.4 - Adicionar comparação case-insensitive de hashes
+  - [-] 5.5 - Implementar logging de validação (sucesso/falha)
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
-- [ ] 5. Implementar módulo de instalação para Windows
-  - Criar função para instalar executáveis (.exe) com argumentos silenciosos
-  - Implementar tentativas múltiplas de argumentos (/S, /silent, /quiet, etc)
-  - Criar função para instalar MSI usando msiexec
-  - Adicionar detecção de códigos de saída (0, 3010, 1641)
-  - Implementar extração e instalação de arquivos ZIP
+- [-] 6. Implementar módulo de instalação para Windows
+  - [-] 6.x - Criar função para instalar executáveis (.exe) com argumentos silenciosos
+  - [-] 6.x - Implementar tentativas múltiplas de argumentos (/S, /silent, /quiet, etc)
+  - [-] 6.x - Criar função para instalar MSI usando msiexec
+  - [-] 6.x - Adicionar detecção de códigos de saída (0, 3010, 16[-] 6.x - 41)
+  - [-] 6.x - Implementar extração e instalação de arquivos ZIP
   - _Requirements: 3.1, 3.2, 3.5_
 
 - [ ] 6. Implementar módulo de instalação para Linux

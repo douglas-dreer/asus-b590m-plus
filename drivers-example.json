@@ -1,0 +1,108 @@
+{
+  "drivers": [
+    {
+      "name": "Intel Chipset Device Software",
+      "url": "https://downloadmirror.intel.com/30091/eng/SetupChipset.exe",
+      "fileName": "SetupChipset.exe",
+      "sha256": "ABC123DEF456789012345678901234567890123456789012345678901234",
+      "type": "exe",
+      "silentArgs": "/quiet /norestart",
+      "version": "10.1.18836.8283",
+      "category": "chipset",
+      "os": "windows",
+      "vendor": "Intel",
+      "deviceId": "PCI\\VEN_8086&DEV_43C8"
+    },
+    {
+      "name": "AMD Radeon Graphics Driver",
+      "url": "https://drivers.amd.com/drivers/installer/22.40/whql/amd-software-adrenalin-edition-23.2.1-minimalsetup-230207_web.exe",
+      "fileName": "AMD_Adrenalin_Web.exe",
+      "sha256": "DEF456ABC789012345678901234567890123456789012345678901234567",
+      "type": "exe",
+      "silentArgs": "/S /v/qn",
+      "version": "23.2.1",
+      "category": "graphics",
+      "os": "windows",
+      "vendor": "AMD",
+      "deviceId": "PCI\\VEN_1002&DEV_73BF"
+    },
+    {
+      "name": "Realtek High Definition Audio",
+      "url": "https://download.asus.com/pub/ASUS/mb/LGA1200/PRIME_Z590M-PLUS/Audio_Realtek_6.0.9235.1_W10_64_20210507.zip",
+      "fileName": "Audio_Realtek.zip",
+      "sha256": "789012DEF456ABC345678901234567890123456789012345678901234567",
+      "type": "zip",
+      "silentArgs": "/S",
+      "version": "6.0.9235.1",
+      "category": "audio",
+      "os": "windows",
+      "vendor": "Realtek",
+      "deviceId": "HDAUDIO\\FUNC_01&VEN_10EC&DEV_0897"
+    },
+    {
+      "name": "Intel I219-V Ethernet Controller",
+      "url": "https://downloadmirror.intel.com/30148/eng/PROWinx64.exe",
+      "fileName": "PROWinx64.exe",
+      "sha256": "012345ABC789DEF456789012345678901234567890123456789012345678",
+      "type": "exe",
+      "silentArgs": "/quiet /norestart",
+      "version": "26.1",
+      "category": "network",
+      "os": "windows",
+      "vendor": "Intel",
+      "deviceId": "PCI\\VEN_8086&DEV_15BC"
+    },
+    {
+      "name": "NVIDIA GeForce Driver",
+      "url": "https://us.download.nvidia.com/Windows/528.02/528.02-desktop-win10-win11-64bit-international-dch-whql.exe",
+      "fileName": "NVIDIA_GeForce_528.02.exe",
+      "sha256": "345678DEF012ABC789456789012345678901234567890123456789012345",
+      "type": "exe",
+      "silentArgs": "/s /noreboot",
+      "version": "528.02",
+      "category": "graphics",
+      "os": "windows",
+      "vendor": "NVIDIA",
+      "deviceId": "PCI\\VEN_10DE&DEV_2204"
+    },
+    {
+      "name": "Intel WiFi 6 AX200",
+      "url": "https://downloadmirror.intel.com/30567/eng/WiFi-22.140.0-Driver64-Win10-Win11.exe",
+      "fileName": "Intel_WiFi_AX200.exe",
+      "sha256": "678901ABC234DEF567890123456789012345678901234567890123456789",
+      "type": "exe",
+      "silentArgs": "/quiet /norestart",
+      "version": "22.140.0",
+      "category": "network",
+      "os": "windows",
+      "vendor": "Intel",
+      "deviceId": "PCI\\VEN_8086&DEV_2723"
+    },
+    {
+      "name": "Intel Graphics Driver (Linux)",
+      "url": "https://downloadmirror.intel.com/linux/graphics/intel-graphics-linux.deb",
+      "fileName": "intel-graphics-linux.deb",
+      "sha256": "901234DEF567ABC890123456789012345678901234567890123456789012",
+      "type": "deb",
+      "silentArgs": "",
+      "version": "1.0.0",
+      "category": "graphics",
+      "os": "linux",
+      "vendor": "Intel",
+      "deviceId": "pci:v00008086d00004680"
+    },
+    {
+      "name": "Realtek RTL8111 Ethernet (Linux)",
+      "url": "https://github.com/mtorromeo/r8168/releases/download/8.051.02/r8168-8.051.02.tar.gz",
+      "fileName": "r8168-8.051.02.tar.gz",
+      "sha256": "234567ABC890DEF123456789012345678901234567890123456789012345",
+      "type": "manual",
+      "silentArgs": "",
+      "version": "8.051.02",
+      "category": "network",
+      "os": "linux",
+      "vendor": "Realtek",
+      "deviceId": "pci:v000010ecdv00008168"
+    }
+  ]
+}
